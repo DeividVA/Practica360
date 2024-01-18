@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>360&deg; Image</title>
     <meta name="description" content="360&deg; Image - A-Frame">
-    <script src="dist/aframe-master.js"></script>
+    <script src="dist/aframe-v1.5.0.min.js"></script>
     <script>
       AFRAME.registerComponent('xbutton-logging',{
   init: function () {
@@ -12,7 +12,7 @@
     this.skyComponent = document.querySelector("#sky").components["src"];
   },
   logXbutton: function (evt) {
-    if (evt == true) { console.log("X Button pressed"); this.skyComponent="RPSKY"; }
+    if (evt == true) { console.log("X Button pressed"); this.skyComponent="RPSKY.jpg"; }
   }
 });
     </script>
