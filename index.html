@@ -5,10 +5,24 @@
     <title>360&deg; Image</title>
     <meta name="description" content="360&deg; Image - A-Frame">
     <script src="dist/aframe-master.js"></script>
+    <script>
+      AFRAME.registerComponent('xbutton-logging',{
+  init: function () {
+    this.el.addEventListener('xbuttondown', this.logThumbstick);
+    this.skyComponent = document.querySelector("#sky").components["src"];
+  },
+  logXbutton: function (evt) {
+    if (evt == true) { console.log("X Button pressed"); this.skyComponent=""; }
+  }
+});
+    </script>
   </head>
   <body>
     <a-scene>
-      <a-sky src="R0010010.jpg" rotation="0 -130 0"></a-sky>
+      <a-entity oculus-touch-controls="hand: left" xbutton-logging></a-entity>
+      <a-entity oculus-touch-controls="hand: right" abutton-logging></a-entity>
+
+      <a-sky id="sky" src="R0010010.jpg" rotation="0 -130 0"></a-sky>
 
       <a-text font="kelsonsans" value="Clase Videojuegos, IES Alberti" width="6" position="-2.5 0.25 -1.5"
               rotation="0 15 0"></a-text>
