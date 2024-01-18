@@ -20,7 +20,9 @@
        window.addEventListener("keydown", (evento) => {
   /* El código "Space" representa la pulsación de la barra espaciadora */
   if (evento.code == "Space") {
-    console.log("Barra espaciadora")
+    console.log("Barra espaciadora");
+    this.skyComponent = document.querySelector("#sky").components["src"];
+    this.skyComponent="RPSKY.jpg";
   }
 });
     </script>
