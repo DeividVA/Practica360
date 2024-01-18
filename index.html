@@ -9,11 +9,10 @@
       AFRAME.registerComponent('xbutton-logging',{
   init: function () {
     this.el.addEventListener('xbuttondown', this.logXbutton);
-    this.skyComponent = document.querySelector("#sky");
   },
   logXbutton: function (evt) {
     console.log("X Button pressed");
-    this.skyComponent.setAttribute("src","RPSKY.jpg");
+    document.querySelector("#sky").setAttribute("src","RPSKY.jpg");
   }
 });
     </script>
