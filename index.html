@@ -5,6 +5,7 @@
     <title>360&deg; Image</title>
     <meta name="description" content="360&deg; Image - A-Frame">
     <script src="dist/aframe-v1.5.0.min.js"></script>
+    
     <script>
       AFRAME.registerComponent('xbutton-logging',{
   init: function () {
@@ -29,6 +30,19 @@
 });
     </script>
 
+
+<script>
+      AFRAME.registerComponent('Bbutton-logging',{
+  init: function () {
+    this.el.addEventListener('bbuttondown', this.logBbutton);
+  },
+  logBbutton: function (evt) {
+    console.log("B Button pressed");
+    document.querySelector("#sky").setAttribute("src","R0010012.MP4");
+  }
+});
+</script>
+    
     
     <script>
        window.addEventListener("keydown", (evento) => {
@@ -40,11 +54,14 @@
   }
 });
     </script>
+
+    
   </head>
   <body>
     <a-scene>
       <a-entity oculus-touch-controls="hand: left" xbutton-logging></a-entity>
       <a-entity oculus-touch-controls="hand: right" abutton-logging></a-entity>
+      <a-entity oculus-touch-controls="hand: right" bbutton-logging></a-entity>
 
       <a-sky id="sky" src="R0010010.jpg" rotation="0 -130 0"></a-sky>
 
