@@ -18,6 +18,18 @@
 });
     </script>
 
+        <script>
+      AFRAME.registerComponent('ybutton-logging',{
+  init: function () {
+    this.el.addEventListener('ybuttondown', this.logYbutton);
+  },
+  logYbutton: function (evt) {
+    console.log("Y Button pressed");
+    document.querySelector("#sky").setAttribute("src","RPSKY.jpg");
+  }
+});
+    </script>
+
     <script>
       AFRAME.registerComponent('abutton-logging',{
   init: function () {
@@ -60,6 +72,7 @@
   <body>
     <a-scene>
       <a-entity oculus-touch-controls="hand: left" xbutton-logging></a-entity>
+      <a-entity oculus-touch-controls="hand: left" ybutton-logging></a-entity>
       <a-entity oculus-touch-controls="hand: right" abutton-logging></a-entity>
       <a-entity oculus-touch-controls="hand: right" bbutton-logging></a-entity>
 
