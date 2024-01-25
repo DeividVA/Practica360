@@ -16,6 +16,20 @@
   }
 });
     </script>
+
+    <script>
+      AFRAME.registerComponent('abutton-logging',{
+  init: function () {
+    this.el.addEventListener('abuttondown', this.logAbutton);
+  },
+  logAbutton: function (evt) {
+    console.log("A Button pressed");
+    document.querySelector("#sky").setAttribute("src","R0010010.jpg");
+  }
+});
+    </script>
+
+    
     <script>
        window.addEventListener("keydown", (evento) => {
   /* El código "Space" representa la pulsación de la barra espaciadora */
